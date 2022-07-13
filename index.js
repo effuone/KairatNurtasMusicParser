@@ -4,9 +4,9 @@ import express from "express";
 import cors from 'cors'
 import 'dotenv/config'
 
-const kairekeUrl = 'https://muzmir.kz/kairat-nurtas'
+const kairekeUrl = 'https://muzmir.kz'
 const getMusicPageLinks = async (url) => {
-    const html = (await Parser.getHtml(url)).data
+    const html = (await Parser.getHtml(url + '/kairat-nurtas')).data
     const $ = cheerio.load(html)
     const htmls = []
     $('.yakum', html).each(function(){
